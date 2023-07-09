@@ -90,6 +90,7 @@ mongoose
     console.log("Connected to DB");
   })
   .catch((e) => console.log(e));
+  
 const userSchema = new mongoose.Schema({
   fname: String,
   lname: String,
