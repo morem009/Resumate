@@ -82,16 +82,6 @@ app.post("/addtemp", upload.single('file'),async (req, res) => {
   }
 });
 
-
-const userSchema = new mongoose.Schema({
-  fname: String,
-  lname: String,
-  email: String,
-  password: String,
-  userType: String,
-});
-
-
 mongoose
   .connect(mongoURL, {
     useNewUrlparser: true,
@@ -100,6 +90,13 @@ mongoose
     console.log("Connected to DB");
   })
   .catch((e) => console.log(e));
+const userSchema = new mongoose.Schema({
+  fname: String,
+  lname: String,
+  email: String,
+  password: String,
+  userType: String,
+});
 
 const User = mongoose.model("UserInfo", userSchema);
 
